@@ -1,35 +1,32 @@
-# PRIVSIG — serwer aplikacji iOS i desktop
+# PRIVSIG — działający serwer aplikacji iOS i desktop
 
-API jest zgodne z opublikowaną aplikacją IPA: HTTPS, logowanie, 13 ról,
-plan, oceny, wiadomości, moduły szkolne i WebSocket. Dostęp i zakres danych
-sprawdza backend. Baza PostgreSQL nie jest przechowywana na dysku aplikacji.
+Serwer testowy został uruchomiony 9 października 2026:
+https://privsig-school-api.onrender.com
 
-`render.yaml` przygotowuje usługę Docker i PostgreSQL w regionie Frankfurt.
-Render zapewnia adres HTTPS. Konfiguracja pozostaje nieuruchomiona do czasu
-połączenia konta Render i udanego wdrożenia. Nie ma jeszcze adresu logowania.
+W aplikacji iPhone wpisz powyższy adres HTTPS w polu serwera, login `admin`
+(superadministrator) lub `uczen` (uczeń), oraz indywidualne hasło przekazane
+w rozmowie. Hasła nie znajdują się w publicznym repozytorium. Uczeń widzi plan,
+oceny i aplikacje przypisane do swojej roli. Administrator zarządza modułami
+oraz kontami w aplikacji Admin. Pozostałe konta mają niepublikowane hasła;
+administrator może nadać im nowe hasła.
 
-W pierwszym wdrożeniu ustaw dwa różne hasła (minimum 16 znaków):
-- PRIVSIG_ADMIN_PASSWORD → login `admin`;
-- PRIVSIG_STUDENT_PASSWORD → login `uczen`.
+Usługi w Render / My Workspace / Frankfurt:
+- API: srv-db4g9f3l550s73blge1g, plan free, Docker, kontrola /health;
+- PostgreSQL 16: dpg-db4g3f4s728c73ali8gg-a, plan free, połączenie wewnętrzne.
 
-Nie umieszczaj haseł w repozytorium ani nie używaj lokalnego hasła demo.
-Pozostałe fikcyjne konta mają indywidualne, niepublikowane hasła. Administrator
-może nadać im nowe hasła w aplikacji: Aplikacje → Admin → Konta.
-Po restarcie istniejące dane i hasła nie są zastępowane.
+Sprawdzone na wdrożonym serwerze: HTTPS /health i PostgreSQL, logowanie obu
+kont, /me, plan ucznia, blokada zmiany ocen przez ucznia (403), uwierzytelniony
+WebSocket ping/pong oraz odrzucenie wspólnego lokalnego hasła demo (401).
+GitHub Actions: cztery testy backendu zakończone powodzeniem z PostgreSQL.
+Nie oznacza to testu instalacji ani pracy IPA na fizycznym iPhone.
 
-Inicjalizacja wstawia wyłącznie fikcyjną szkołę i dane testowe. Wydanie nie jest
-zatwierdzone do produkcyjnego użycia z danymi uczniów. Wdrażanie rzeczywistej
-szkoły wymaga oddzielnej konfiguracji, kopii zapasowych i oceny ochrony danych.
+Baza zawiera wyłącznie fikcyjną szkołę i dane testowe. Usługa nie jest
+zatwierdzona do produkcyjnego przetwarzania danych uczniów. Bezpłatna baza
+wygasa 8 listopada 2026; przed tym terminem potrzebna jest decyzja o dalszym
+hostingu i kopii danych. Darmowa usługa może zasypiać; pierwsze połączenie
+może potrwać około minuty — wtedy ponów logowanie.
 
-Plan free służy testom: usługa może zasypiać po 15 minutach bezczynności,
-a bezpłatna baza PostgreSQL wygasa po 30 dniach. Pierwsze połączenie po uśpieniu
-może wymagać odczekania i ponowienia logowania. Nie uruchamiaj płatnego planu,
-jeśli go nie wybrałeś. Długoterminowe wdrożenie wymaga planu bazy bez tego limitu.
-
-Po udanym wdrożeniu wpisz rzeczywisty adres HTTPS zwrócony przez Render
-w aplikacji na iPhone. Rola wynika z konta. Nie ma lokalnego przełącznika
-"jestem administratorem".
-
-Dokumentacja:
-https://render.com/docs/blueprint-spec
-https://render.com/docs/free
+Usługi utworzono narzędziami Render. render.yaml pozostaje szablonem dla
+osobnego wdrożenia; nie uruchamiaj go ponownie dla tych samych usług.
+Konfiguracja początkowych haseł jest używana wyłącznie przy pustej bazie.
+Ponowne uruchomienia nie zastępują kont ani istniejących danych.
