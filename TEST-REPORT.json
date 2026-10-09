@@ -1,0 +1,51 @@
+{
+  "status": "source_project_only_not_compiled_for_ios",
+  "ios_ipa_built": false,
+  "ios_device_tested": false,
+  "swift_typechecked": false,
+  "swift_syntax_parser": "tree-sitter-swift: four Swift files without syntax errors",
+  "project_format": "OpenStep project parsed; shared scheme XML parsed; bundled catalog JSON parsed",
+  "api_tests": {
+    "passed": 3,
+    "failed": 0,
+    "scope": [
+      "13 roles and student object scope",
+      "Teacher grade update, parent view, notifications, history, version conflict 409",
+      "Secretariat timetable update, admin account creation, denied IT account administration, authenticated WebSocket ping"
+    ]
+  },
+  "not_tested": [
+    "Xcode compilation",
+    "iOS Simulator",
+    "iPhone/iPad",
+    "IPA installation/signing",
+    "PostgreSQL/Docker deployment for this mobile release",
+    "HTTPS/WSS communication from actual iOS client",
+    "Background APNs notifications (not implemented)"
+  ],
+  "versions": {
+    "fastapi": "0.143.0",
+    "starlette": "1.7.0",
+    "uvicorn": "0.54.0",
+    "sqlalchemy": "2.1.4",
+    "argon2-cffi": "25.1.0",
+    "websockets": "17.2",
+    "cryptography": "50.0.2",
+    "httpx": "0.28.1",
+    "pytest": "9.1.1",
+    "psycopg": "3.3.6"
+  },
+  "unsigned_build_script": {
+    "shell_syntax": "passed",
+    "reject_linux_without_xcode": "passed",
+    "actual_ios_compilation": "not_run",
+    "ipa_packaging_on_macos": "not_run"
+  },
+  "github_workflow": {
+    "yaml_parse": "passed",
+    "runner": "macos-15",
+    "event": "workflow_dispatch",
+    "execution": "not_run",
+    "reason": "GitHub connection and target repository required"
+  }
+}

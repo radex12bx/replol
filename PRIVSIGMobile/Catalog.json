@@ -1,0 +1,1071 @@
+{
+  "apps": [
+    {
+      "id": "grades",
+      "name": "Dziennik",
+      "modules": [
+        "grades",
+        "attendance",
+        "assessments",
+        "homework",
+        "finals"
+      ]
+    },
+    {
+      "id": "notes",
+      "name": "Uwagi",
+      "modules": [
+        "notes"
+      ]
+    },
+    {
+      "id": "messenger",
+      "name": "Messenger",
+      "modules": [
+        "messages"
+      ]
+    },
+    {
+      "id": "director",
+      "name": "Dyrektor",
+      "modules": [
+        "school_tasks"
+      ]
+    },
+    {
+      "id": "teacher",
+      "name": "Nauczyciel",
+      "modules": [
+        "attendance",
+        "grades",
+        "homework",
+        "assessments",
+        "finals"
+      ]
+    },
+    {
+      "id": "janitor",
+      "name": "Woźny",
+      "modules": [
+        "maintenance"
+      ]
+    },
+    {
+      "id": "office",
+      "name": "Sekretariat",
+      "modules": [
+        "office_records"
+      ]
+    },
+    {
+      "id": "plan",
+      "name": "Plan",
+      "modules": [
+        "timetable",
+        "substitutions"
+      ]
+    },
+    {
+      "id": "calendar",
+      "name": "Kalendarz",
+      "modules": [
+        "events"
+      ]
+    },
+    {
+      "id": "files",
+      "name": "Files",
+      "modules": [
+        "documents"
+      ]
+    },
+    {
+      "id": "admin",
+      "name": "Admin",
+      "modules": []
+    },
+    {
+      "id": "library",
+      "name": "Biblioteka",
+      "modules": [
+        "books",
+        "loans"
+      ]
+    },
+    {
+      "id": "pedagogue",
+      "name": "Pedagog",
+      "modules": [
+        "cases"
+      ]
+    },
+    {
+      "id": "it",
+      "name": "IT",
+      "modules": [
+        "tickets"
+      ]
+    },
+    {
+      "id": "reports",
+      "name": "Reports",
+      "modules": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "grades",
+      "name": "Oceny",
+      "fields": [
+        {
+          "key": "student_id",
+          "label": "Uczeń",
+          "kind": "student",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "class_id",
+          "label": "Klasa",
+          "kind": "class",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "subject",
+          "label": "Przedmiot",
+          "kind": "choice",
+          "options": [
+            "Matematyka",
+            "Język polski",
+            "Język angielski",
+            "Historia",
+            "Biologia",
+            "Informatyka",
+            "Fizyka",
+            "Chemia",
+            "WF"
+          ],
+          "required": true
+        },
+        {
+          "key": "value",
+          "label": "Ocena 1–6",
+          "kind": "int",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "modifier",
+          "label": "Plus / minus",
+          "kind": "choice",
+          "options": [
+            "",
+            "+",
+            "-"
+          ],
+          "required": true
+        },
+        {
+          "key": "weight",
+          "label": "Waga",
+          "kind": "int",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "category",
+          "label": "Kategoria",
+          "kind": "choice",
+          "options": [
+            "Sprawdzian",
+            "Kartkówka",
+            "Odpowiedź",
+            "Aktywność",
+            "Praca domowa"
+          ],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Opis",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "attendance",
+      "name": "Frekwencja",
+      "fields": [
+        {
+          "key": "student_id",
+          "label": "Uczeń",
+          "kind": "student",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "class_id",
+          "label": "Klasa",
+          "kind": "class",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "subject",
+          "label": "Przedmiot",
+          "kind": "choice",
+          "options": [
+            "Matematyka",
+            "Język polski",
+            "Język angielski",
+            "Historia",
+            "Biologia",
+            "Informatyka",
+            "Fizyka",
+            "Chemia",
+            "WF"
+          ],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "lesson",
+          "label": "Numer lekcji",
+          "kind": "int",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "kind": "choice",
+          "options": [
+            "Obecny",
+            "Nieobecny",
+            "Spóźnienie",
+            "Usprawiedliwiony"
+          ],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "assessments",
+      "name": "Sprawdziany",
+      "fields": [
+        {
+          "key": "class_id",
+          "label": "Klasa",
+          "kind": "class",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "subject",
+          "label": "Przedmiot",
+          "kind": "choice",
+          "options": [
+            "Matematyka",
+            "Język polski",
+            "Język angielski",
+            "Historia",
+            "Biologia",
+            "Informatyka",
+            "Fizyka",
+            "Chemia",
+            "WF"
+          ],
+          "required": true
+        },
+        {
+          "key": "title",
+          "label": "Temat",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Opis",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "homework",
+      "name": "Zadania domowe",
+      "fields": [
+        {
+          "key": "class_id",
+          "label": "Klasa",
+          "kind": "class",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "subject",
+          "label": "Przedmiot",
+          "kind": "choice",
+          "options": [
+            "Matematyka",
+            "Język polski",
+            "Język angielski",
+            "Historia",
+            "Biologia",
+            "Informatyka",
+            "Fizyka",
+            "Chemia",
+            "WF"
+          ],
+          "required": true
+        },
+        {
+          "key": "title",
+          "label": "Zadanie",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Termin oddania",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Opis",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "finals",
+      "name": "Oceny końcowe",
+      "fields": [
+        {
+          "key": "student_id",
+          "label": "Uczeń",
+          "kind": "student",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "class_id",
+          "label": "Klasa",
+          "kind": "class",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "subject",
+          "label": "Przedmiot",
+          "kind": "choice",
+          "options": [
+            "Matematyka",
+            "Język polski",
+            "Język angielski",
+            "Historia",
+            "Biologia",
+            "Informatyka",
+            "Fizyka",
+            "Chemia",
+            "WF"
+          ],
+          "required": true
+        },
+        {
+          "key": "value",
+          "label": "Ocena końcowa",
+          "kind": "int",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "period",
+          "label": "Okres",
+          "kind": "choice",
+          "options": [
+            "Semestr 1",
+            "Semestr 2",
+            "Roczna"
+          ],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "notes",
+      "name": "Uwagi i pochwały",
+      "fields": [
+        {
+          "key": "student_id",
+          "label": "Uczeń",
+          "kind": "student",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "class_id",
+          "label": "Klasa",
+          "kind": "class",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "kind",
+          "label": "Rodzaj",
+          "kind": "choice",
+          "options": [
+            "Pochwała",
+            "Uwaga",
+            "Zachowanie"
+          ],
+          "required": true
+        },
+        {
+          "key": "title",
+          "label": "Treść",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "messages",
+      "name": "Wiadomości",
+      "fields": [
+        {
+          "key": "recipient_id",
+          "label": "Odbiorca",
+          "kind": "user",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "title",
+          "label": "Temat",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "body",
+          "label": "Wiadomość",
+          "kind": "long",
+          "options": [],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "school_tasks",
+      "name": "Zadania szkoły",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Zadanie",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "assignee_id",
+          "label": "Osoba odpowiedzialna",
+          "kind": "user",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "kind": "choice",
+          "options": [
+            "Nowe",
+            "W toku",
+            "Gotowe"
+          ],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Opis",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "name": "Naprawy i klucze",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Zadanie",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "room",
+          "label": "Sala / miejsce",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "kind",
+          "label": "Rodzaj",
+          "kind": "choice",
+          "options": [
+            "Naprawa",
+            "Klucze",
+            "Porządek",
+            "Inne"
+          ],
+          "required": true
+        },
+        {
+          "key": "assignee_id",
+          "label": "Wykonawca",
+          "kind": "user",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "kind": "choice",
+          "options": [
+            "Nowe",
+            "W toku",
+            "Gotowe"
+          ],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Opis",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "office_records",
+      "name": "Dokumentacja",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Nazwa",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "kind",
+          "label": "Rodzaj",
+          "kind": "choice",
+          "options": [
+            "Wniosek",
+            "Zaświadczenie",
+            "Rekrutacja",
+            "Korespondencja"
+          ],
+          "required": true
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "kind": "choice",
+          "options": [
+            "Nowe",
+            "W toku",
+            "Wydane",
+            "Archiwum"
+          ],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Opis",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "timetable",
+      "name": "Plan lekcji",
+      "fields": [
+        {
+          "key": "class_id",
+          "label": "Klasa",
+          "kind": "class",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "subject",
+          "label": "Przedmiot",
+          "kind": "choice",
+          "options": [
+            "Matematyka",
+            "Język polski",
+            "Język angielski",
+            "Historia",
+            "Biologia",
+            "Informatyka",
+            "Fizyka",
+            "Chemia",
+            "WF"
+          ],
+          "required": true
+        },
+        {
+          "key": "day",
+          "label": "Dzień",
+          "kind": "choice",
+          "options": [
+            "Poniedziałek",
+            "Wtorek",
+            "Środa",
+            "Czwartek",
+            "Piątek"
+          ],
+          "required": true
+        },
+        {
+          "key": "lesson",
+          "label": "Lekcja",
+          "kind": "int",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "room",
+          "label": "Sala",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "teacher_id",
+          "label": "Nauczyciel",
+          "kind": "user",
+          "options": [],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "substitutions",
+      "name": "Zastępstwa",
+      "fields": [
+        {
+          "key": "class_id",
+          "label": "Klasa",
+          "kind": "class",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "subject",
+          "label": "Przedmiot",
+          "kind": "choice",
+          "options": [
+            "Matematyka",
+            "Język polski",
+            "Język angielski",
+            "Historia",
+            "Biologia",
+            "Informatyka",
+            "Fizyka",
+            "Chemia",
+            "WF"
+          ],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "lesson",
+          "label": "Lekcja",
+          "kind": "int",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "teacher_id",
+          "label": "Zastępujący",
+          "kind": "user",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "room",
+          "label": "Sala",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Opis",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "name": "Wydarzenia",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Wydarzenie",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "time",
+          "label": "Godzina (HH:MM)",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "location",
+          "label": "Miejsce",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Opis",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "documents",
+      "name": "Dokumenty",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Nazwa pliku",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "audience",
+          "label": "Dostęp",
+          "kind": "choice",
+          "options": [
+            "Prywatny",
+            "Pracownicy",
+            "Klasa"
+          ],
+          "required": true
+        },
+        {
+          "key": "class_id",
+          "label": "Klasa (dla dostępu Klasa)",
+          "kind": "class",
+          "options": [],
+          "required": false
+        },
+        {
+          "key": "body",
+          "label": "Treść dokumentu tekstowego",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "books",
+      "name": "Katalog książek",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Tytuł",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "author",
+          "label": "Autor",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "isbn",
+          "label": "ISBN / identyfikator",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "copies",
+          "label": "Egzemplarze",
+          "kind": "int",
+          "options": [],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "loans",
+      "name": "Wypożyczenia",
+      "fields": [
+        {
+          "key": "student_id",
+          "label": "Uczeń",
+          "kind": "student",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "book_id",
+          "label": "Książka",
+          "kind": "book",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "date",
+          "label": "Data",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "due_date",
+          "label": "Termin zwrotu",
+          "kind": "date",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "kind": "choice",
+          "options": [
+            "Wypożyczona",
+            "Zwrócona"
+          ],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "cases",
+      "name": "Sprawy specjalistyczne",
+      "fields": [
+        {
+          "key": "student_id",
+          "label": "Uczeń",
+          "kind": "student",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "kind",
+          "label": "Rodzaj",
+          "kind": "choice",
+          "options": [
+            "Wychowawcza",
+            "Psychologiczna",
+            "Medyczna"
+          ],
+          "required": true
+        },
+        {
+          "key": "assignee_id",
+          "label": "Opiekun sprawy",
+          "kind": "user",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "title",
+          "label": "Sprawa",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "kind": "choice",
+          "options": [
+            "Otwarta",
+            "W toku",
+            "Zamknięta"
+          ],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Poufna notatka",
+          "kind": "long",
+          "options": [],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "tickets",
+      "name": "Zgłoszenia IT",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Problem",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "device",
+          "label": "Urządzenie / sala",
+          "kind": "text",
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "priority",
+          "label": "Priorytet",
+          "kind": "choice",
+          "options": [
+            "Niski",
+            "Normalny",
+            "Wysoki"
+          ],
+          "required": true
+        },
+        {
+          "key": "status",
+          "label": "Status",
+          "kind": "choice",
+          "options": [
+            "Nowe",
+            "W toku",
+            "Rozwiązane"
+          ],
+          "required": true
+        },
+        {
+          "key": "description",
+          "label": "Opis",
+          "kind": "long",
+          "options": [],
+          "required": false
+        }
+      ]
+    }
+  ],
+  "roles": {
+    "superadmin": "Superadministrator",
+    "director": "Dyrektor",
+    "deputy": "Wicedyrektor",
+    "teacher": "Nauczyciel",
+    "tutor": "Wychowawca",
+    "janitor": "Woźny",
+    "office": "Sekretariat",
+    "pedagogue": "Pedagog",
+    "psychologist": "Psycholog",
+    "librarian": "Bibliotekarz",
+    "it": "Administrator IT",
+    "student": "Uczeń",
+    "parent": "Rodzic"
+  }
+}

@@ -1,0 +1,47 @@
+name: Build PRIVSIG unsigned IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-ipa:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Verify Apple toolchain
+        run: |
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-path
+
+      - name: Build without certificate
+        shell: bash
+        run: |
+          set -o pipefail
+          sh build-unsigned-ipa.sh 2>&1 | tee build-output.log
+
+      - name: Upload unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: PRIVSIGMobile-unsigned-IPA
+          path: build/PRIVSIGMobile-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: PRIVSIG-iOS-build-log
+          path: build-output.log
+          if-no-files-found: ignore
+          retention-days: 7
