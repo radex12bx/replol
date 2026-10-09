@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: privsig-school-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: Server/Dockerfile
+    dockerContext: Server
+    healthCheckPath: /health
+    numInstances: 1
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: privsig-school-db
+          property: connectionString
+      - key: PRIVSIG_INITIAL_FICTIONAL_SCHOOL
+        value: "1"
+      - key: PRIVSIG_BOOTSTRAP_SECRET
+        generateValue: true
+      - key: PRIVSIG_ADMIN_PASSWORD
+        sync: false
+      - key: PRIVSIG_STUDENT_PASSWORD
+        sync: false
+
+databases:
+  - name: privsig-school-db
+    plan: free
+    region: frankfurt
+    databaseName: privsig
+    user: privsig
+    postgresMajorVersion: "16"
+    ipAllowList: []
